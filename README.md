@@ -23,6 +23,32 @@ To load the dynamic library, just make sure it is packed inside the JAR archive 
         public native void hello();    
     }
 
+## Building C library tests
+```
+$ cd src/test/c
+$ gcc -c -Wall -Werror -fpic ctest.c
+$ gcc -shared -o libctest.so ctest.o
+$ gcc -L$(pwd) -Wall -o test main.c -lctest
+```
+
+## Running C library tests using C
+```
+$ cd src/test/c
+$ export LD_LIBRARY_PATH=$(pwd):$LD_LIBRARY_PATH
+$ ./test
+
+## Running C library tests using Maven
+```
+$ sudo apt install -y maven
+$ mvn package
+```
+and/or
+```
+$ sudo apt install -y maven
+$ mvn -Dtest=NativeUtilsTest#testLoadCLibraryLoad test
+$ mvn -Dctest_int=NativeUtilsTest#testLoadCLibraryInt ctest_int
+```
+
 ## More information
 More information can be found in accompanying [blog post][1].
 

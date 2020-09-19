@@ -26,4 +26,16 @@ public class NativeUtilsTest {
     public void testLoadLibraryNullPath() throws IOException {
         NativeUtils.loadLibraryFromJar(null);
     }
+/*
+    @Test
+    public void testLoadCLibraryLoad() throws IOException {
+        try {    
+            NativeUtils.loadLibraryFromJar("libctest.so");
+            System.out.print("loaded\n");
+            //assertEquals(10)
+        } catch (IOException e) {    
+            e.printStackTrace();
+        }  
+    }
+    */
 }
