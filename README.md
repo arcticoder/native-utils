@@ -36,13 +36,13 @@ $ gcc -L$(pwd) -Wall -o test main.c -lctest
 $ cd src/test/c
 $ export LD_LIBRARY_PATH=$(pwd):$LD_LIBRARY_PATH
 $ ./test
-
+```
 ## Running C library tests using Maven
 ```
 $ sudo apt install -y maven
 $ mvn package
 ```
-and/or
+## and/or
 ```
 $ sudo apt install -y maven
 $ mvn -Dtest=NativeUtilsTest#testLoadCLibraryLoad test
